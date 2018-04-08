@@ -1,0 +1,3 @@
+- Cloud Search is built on top of Apache Solr
+- It is a managed service and it can upscale/downscale itself
+- Store 5 MB/data

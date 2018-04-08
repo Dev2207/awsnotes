@@ -1,0 +1,27 @@
+AWS Dynamo DB Notes:
+
+- Data are stored in SDD
+- Automatically replicated across multiple Availability Zones within an AWS Region. 
+- Partition management is handled entirely by DynamoDB—you never have to manage partitions yourself.
+- Primary key = Partition key
+- Works  internaly with the help of continous hashing
+- build tables where the partition key element has a large number of distinct values
+- Query based on P.Key is faster bcoz dynamo will know which node/host to search for
+- Scan is costly, bcoz dynamo db doesnt know the data location. Its a brute force search.
+- Also Scanning is costly since aws charges for all read items.
+- Partition can store 10 GB of data.
+- WCU/RCU are equally distributed among nodes.
+- Strong consistent reads are 1 RCU (No stale Data)and Eventual consistent reads are 0.5 RCU(Stale Data possible).
+- LSI gives a flexiblity of additional sort keys
+- GSI gives a flexiblity of additional partition keys . Copy of the same data with different partition key.
+- 5 LSI and 5 GSI are allowed per table.
+- LSI max 10Gb whereas GSI unlimited size.
+- Consistent reads are not allowed in GSI.
+- 1 RCU = 4KiloBytes/second, 1 WCU : Put/Delete = 1KiloByte/second, Update = max(olditem,new item)/1KiloBytes.
+- Max rcu = 10,000 can extend upto 20,000 per table, likewise wcu.
+- First 25GB data free, $0.25 thereafter.
+- DynamoDB version attribute is used for optimistic locking.
+- Clobber Save Behaviour - to override the locking,
+
+Scenario: If a table has 40 attributes and each attribute constitute 1Kb data. When my appln tries to read only 4 attributes, how 
+much read capacity units im consuming? 40/4 = 10 RCU.
