@@ -12,7 +12,9 @@ AWS Dynamo DB Notes:
 - Partition can store 10 GB of data.
 - WCU/RCU are equally distributed among nodes.
 - Strong consistent reads are 1 RCU (No stale Data)and Eventual consistent reads are 0.5 RCU(Stale Data possible).
-- LSI gives a flexiblity of additional sort keys
+- LSI gives a flexiblity of additional sort keys.
+- In LSI values can be duplicated.
+- All LSI data of same partition can be of 10GB size.
 - GSI gives a flexiblity of additional partition keys . Copy of the same data with different partition key.
 - 5 LSI and 5 GSI are allowed per table.
 - LSI max 10Gb whereas GSI unlimited size.
