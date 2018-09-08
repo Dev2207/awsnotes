@@ -4,3 +4,7 @@
 - Storage Classes: S3 standard(low latency, high durablity, no min obj size, no storage duration), 
                    S3 infrequent access (low latency, high durablity, fee/GB, 128kb size, 30 days), 
                    Glacier (high latency -  4hrs/Byte, high durablity, fee/GB, no min obj size, 90 days)
+- Versioning, Life Cycle policies (expiration rule).
+- S3 buckets are at global level, hence bucket name should be unique across global level.
+- Storage class are at object level and not at bucket level.
+- At the object level - we can set storage class, encryption, meta-data.
