@@ -1,3 +1,4 @@
 HashMap works internally : https://javarevisited.blogspot.com/2011/02/how-hashmap-works-in-java.html
+Multiple Threading : http://tutorials.jenkov.com/java-concurrency/java-memory-model.html
 
 List removeAll -----> batchRemove -> contains -> indexOf --> equals
